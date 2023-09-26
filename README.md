@@ -10,7 +10,7 @@ We first recommend setting up a `conda` environment for this project. This can b
 conda create -n pref_opt_for_mols python=3.9
 ```
 
-Once created, we can activate the environment and install the required dependencies (`torch`, `pytorch-lightning`, `pandas`, `rdkit`, `neptune`, `scipy`, and `joblib`):
+Once created, we can activate the environment and install the required dependencies:
 
 ```bash
 conda activate pref_opt_for_mols
