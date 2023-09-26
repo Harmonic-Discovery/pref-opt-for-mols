@@ -1,0 +1,19 @@
+{
+    "arch": "rnn",
+    "train_smiles_path": "data/smiles-rnn-chembl-100k-EGFR-predicted.csv",
+    "reference_path": "checkpoints/smiles-rnn-chembl",
+    "model_path": "checkpoints/smiles-rnn-EGFR-dpo",
+    "n_train": "auto",
+    "val_split": 0.1,
+    "seq_len": 64,
+    "beta": 0.5,
+    "lr": {
+        "stop": 5e-7,
+        "steps": 150
+    },
+    "aug_prob": 0.0,
+    "batch_size": 64,
+    "grad_norm_clip": 10.0,
+    "gradient_accumulation": 2,
+    "max_epochs": 80
+}

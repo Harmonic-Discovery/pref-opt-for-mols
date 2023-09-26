@@ -1,0 +1,19 @@
+{
+    "arch": "gpt",
+    "train_smiles_path": "data/smiles-gpt-base-100K-mcf.csv",
+    "reference_path": "checkpoints/smiles-gpt-base",
+    "model_path": "checkpoints/smiles-gpt-mcf-dpo",
+    "n_train": "auto",
+    "val_split": 0.1,
+    "seq_len": 64,
+    "beta": 0.5,
+    "lr": {
+        "stop": 5e-7,
+        "steps": 150
+    },
+    "aug_prob": 0.3,
+    "batch_size": 32,
+    "grad_norm_clip": 10.0,
+    "gradient_accumulation": 2,
+    "max_epochs": 100
+}

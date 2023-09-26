@@ -1,0 +1,13 @@
+{
+    "model_path": "checkpoints/smiles-gpt-chembl/",
+    "pretrained_model_path": "checkpoints/smiles-gpt-base/",
+    "train_smiles_file": "data/train_chembl_smiles.csv",
+    "test_smiles_file": "data/test_chembl_smiles.csv",
+    "batch_size": 256,
+    "max_epochs": 80,
+    "learning_rate": 5e-4,
+    "lr_decay": false,
+    "attn_pdrop": 0.1,
+    "resid_pdrop": 0.1,
+    "embd_pdrop": 0.1
+}

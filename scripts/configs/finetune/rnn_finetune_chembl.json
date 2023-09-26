@@ -1,0 +1,9 @@
+{
+    "model_path": "checkpoints/smiles-rnn-chembl/",
+    "pretrained_model_path": "checkpoints/smiles-rnn-base/",
+    "train_smiles_file": "data/train_chembl_smiles.csv",
+    "test_smiles_file": "data/test_chembl_smiles.csv",
+    "batch_size": 128,
+    "max_epochs": 80,
+    "learning_rate": 1e-3
+}

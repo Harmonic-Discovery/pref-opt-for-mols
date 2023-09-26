@@ -1,0 +1,9 @@
+torch
+pytorch-lightning
+pandas
+rdkit
+neptune
+neptune-pytorch
+scipy
+joblib
+fcd_torch

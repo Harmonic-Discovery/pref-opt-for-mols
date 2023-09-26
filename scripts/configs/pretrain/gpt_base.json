@@ -1,0 +1,16 @@
+{
+    "model_path": "checkpoints/smiles-gpt-base/",
+    "seq_len": 64,
+    "model_type": "gpt-small",
+    "aug_prob": 0.0,
+    "attn_pdrop": 0.1,
+    "resid_pdrop": 0.1,
+    "embd_pdrop": 0.1,
+    "lr_decay": true,
+    "warmup_tokens": 1e6,
+    "final_tokens": 1e8,
+    "learning_rate": 6e-4,
+    "grad_norm_clip": 1.0,
+    "batch_size": 256,
+    "max_epochs": 40
+}

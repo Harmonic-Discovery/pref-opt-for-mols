@@ -1,0 +1,19 @@
+{
+    "arch": "rnn",
+    "train_smiles_path": "/home/ryanpark/projs/pref-opt-for-mols/scripts/data/smiles-rnn-base-100K-mcf.csv",
+    "reference_path": "/home/ryanpark/projs/pref-opt-for-mols/scripts/checkpoints/smiles-rnn-base",
+    "model_path": "/home/ryanpark/projs/pref-opt-for-mols/scripts/checkpoints/smiles-rnn-base-dpo",
+    "n_train": "auto",
+    "val_split": 0.1,
+    "seq_len": 64,
+    "beta": 0.5,
+    "lr": {
+        "stop": 5e-7,
+        "steps": 150
+    },
+    "aug_prob": 0.3,
+    "batch_size": 32,
+    "grad_norm_clip": 10.0,
+    "gradient_accumulation": 2,
+    "max_epochs": 100
+}
