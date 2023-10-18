@@ -1,8 +1,8 @@
 {
     "arch": "rnn",
-    "train_smiles_path": "/home/ryanpark/projs/pref-opt-for-mols/scripts/data/smiles-rnn-base-100K-mcf.csv",
-    "reference_path": "/home/ryanpark/projs/pref-opt-for-mols/scripts/checkpoints/smiles-rnn-base",
-    "model_path": "/home/ryanpark/projs/pref-opt-for-mols/scripts/checkpoints/smiles-rnn-base-dpo",
+    "train_smiles_path": "data/smiles-rnn-base-100K-mcf.csv",
+    "reference_path": "checkpoints/smiles-rnn-base",
+    "model_path": "checkpoints/smiles-rnn-mcf-dpo",
     "n_train": "auto",
     "val_split": 0.1,
     "seq_len": 64,
