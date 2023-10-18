@@ -31,10 +31,13 @@ args = parser.parse_args()
 
 
 def train(model, config, train_loader, test_loader=None):
-    logger = pl.loggers.NeptuneLogger(
-        project="harmonic-discovery/HD-Generative-Models",
-        api_token=os.environ.get("NEPTUNE_API_KEY"),
-    )
+    if config.get("neptune_project"):
+        logger = pl.loggers.NeptuneLogger(
+            project=config.get("neptune_project"),
+            api_token=os.environ.get("NEPTUNE_API_KEY"),
+        )
+    else:
+        logger = None
 
     # log configs
     for key, value in config.items():
@@ -80,21 +83,6 @@ if __name__ == "__main__":
     assert config.get("model_path") is not None
 
     os.makedirs(config.get("model_path"), exist_ok=True)
-
-    # smiles_col = "selfies" if config.get("selfies", False) else "smiles"
-    # scaffold_col = "scaffold_selfies" if config.get("selfies", False) else "scaffold"
-    # train_set = pd.read_csv(args.train_smiles)
-    # train_smiles = train_set[smiles_col].tolist()
-    # train_scaffolds = train_set[scaffold_col].tolist()
-    # del train_set
-
-    # if args.test_smiles is not None:
-    #     test_set = pd.read_csv(args.test_smiles)
-    #     test_smiles = test_set[smiles_col].tolist()
-    #     test_scaffolds = test_set[scaffold_col].tolist()
-    #     del test_set
-    # else:
-    #     test_smiles, test_scaffolds = None, None
 
     train_smiles = load_moses("train")
     test_smiles = load_moses("test")

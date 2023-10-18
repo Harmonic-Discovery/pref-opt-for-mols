@@ -32,10 +32,13 @@ print(f"Using device {args.device}")
 
 
 def train(model, config, train_loader, test_loader=None):
-    logger = pl.loggers.NeptuneLogger(
-        project="harmonic-discovery/HD-Generative-Models",
-        api_token=os.environ.get("NEPTUNE_API_KEY"),
-    )
+    if config.get("neptune_project"):
+        logger = pl.loggers.NeptuneLogger(
+            project=config.get("neptune_project"),
+            api_token=os.environ.get("NEPTUNE_API_KEY"),
+        )
+    else:
+        logger = None
 
     # log configs
     for key, value in config.items():

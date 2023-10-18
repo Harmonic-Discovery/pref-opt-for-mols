@@ -138,15 +138,18 @@ if __name__ == "__main__":
     val_loader = get_dataloader(val_dataset, "val")
 
     # Training and saving
-    npt_run = neptune.init_run(
-        project="harmonic-discovery/HD-Generative-Models",
-        api_token=os.environ.get("NEPTUNE_API_KEY"),
-        mode="debug" if args.debug else "async",
-        name=args.name,
-    )
-    npt_logger = NeptuneLogger(run=npt_run, model=policy)
+    if config.get("neptune_project"):
+        npt_run = neptune.init_run(
+            project=config.get("neptune_project"),
+            api_token=os.environ.get("NEPTUNE_API_KEY"),
+            mode="debug" if args.debug else "async",
+            name=args.name,
+        )
+        npt_logger = NeptuneLogger(run=npt_run, model=policy)
+    else:
+        npt_logger = None
     trainer = DPO(
-        reference, policy, config, logger=npt_logger, run=npt_run, device=args.device
+        reference, policy, config, logger=npt_logger, run=npt_logger, device=args.device
     )
     trainer.save_configs(config["model_path"])
     trainer.train(train_loader, val_loader)
