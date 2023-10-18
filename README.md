@@ -2,6 +2,9 @@
 
 This repo contains supporting code for "Preference Optimization for Molecular Language Models".
 
+
+![Alt text](pref_opt_for_mols/pref-opt-schematic.png?raw=true "Title")
+
 ## Setup and installation
 
 We first recommend setting up a `conda` environment for this project. This can be done with
