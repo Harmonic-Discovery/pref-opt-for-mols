@@ -7,3 +7,4 @@ neptune-pytorch
 scipy
 joblib
 fcd_torch
+transformers
